@@ -114,13 +114,18 @@ const showGeneratedNumbers = () => {
 
   var primaryEls = [].slice.call(document.querySelectorAll(".prim-num"));
   primaryEls.forEach(function (div, idx) {
-    if (winningNums.primary.length >= idx)
+    if (winningNums.primary.length >= idx) {
       div.textContent = winningNums.primary[idx];
+      div.style.color = "#000000";
+    }
   });
 
   var euroEls = [].slice.call(document.querySelectorAll(".euro-num"));
   euroEls.forEach(function (div, idx) {
-    if (winningNums.euro.length >= idx) div.textContent = winningNums.euro[idx];
+    if (winningNums.euro.length >= idx) {
+      div.textContent = winningNums.euro[idx];
+      div.style.color = "#000000";
+    }
   });
 };
 
