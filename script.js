@@ -6,6 +6,10 @@ Generator includes four different strategies, of which one is randomly picked.
 These strategies combine having 3 or 2 odd numbers with 2 or 3 even numbers, with 2 or 3 numbers being in the lower range and 3 or 2 numbers in the higher range.
 */
 
+let buttonGen;
+
+buttonGen = document.querySelector("#generate-button");
+
 const euroNumPairs = [
   [1, 6],
   [3, 4],
@@ -105,5 +109,22 @@ const generateEuroJackpot = () => {
   return winningObj;
 };
 
+const showGeneratedNumbers = () => {
+  let winningNums = generateEuroJackpot();
+
+  var primaryEls = [].slice.call(document.querySelectorAll(".prim-num"));
+  primaryEls.forEach(function (div, idx) {
+    if (winningNums.primary.length >= idx)
+      div.textContent = winningNums.primary[idx];
+  });
+
+  var euroEls = [].slice.call(document.querySelectorAll(".euro-num"));
+  euroEls.forEach(function (div, idx) {
+    if (winningNums.euro.length >= idx) div.textContent = winningNums.euro[idx];
+  });
+};
+
+buttonGen.addEventListener("click", showGeneratedNumbers);
+
 let winningNums = generateEuroJackpot();
-console.table(winningNums);
+console.table(winningNums.euro[0]);
