@@ -73,6 +73,7 @@ h6 {
 
 body {
   background: #ebf2fa;
+  font-family: "Josefin Sans", sans-serif;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50px 1fr 35px;
@@ -167,6 +168,7 @@ main {
 }
 
 #generate-button {
+  cursor: pointer;
   border-radius: 25px;
   width: 100px;
   height: 100px;
