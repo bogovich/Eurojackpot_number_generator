@@ -102,7 +102,7 @@ nav ul li a {
   text-decoration: none;
   text-align: center;
   color: #696d7d;
-  font-size: 25px;
+  font-size: 1.57rem;
 }
 
 nav ul li a:hover {
@@ -122,9 +122,10 @@ main {
   grid-area: main-content;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: 100px repeat(4, 1fr);
   background: linear-gradient(to bottom, #f6c758, #ca7f26);
   align-items: center;
+  gap: 10px;
 }
 
 .num-section {
@@ -138,7 +139,8 @@ main {
 .button-section {
   justify-self: center;
   display: grid;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
 }
 /*background: linear-gradient(to bottom, #f6c758, #ca7f26);*/
 
@@ -158,13 +160,15 @@ main {
   width: 65px;
   line-height: 65px;
   font-weight: 800;
-  font-size: 25px;
+  font-size: 1.58rem;
   text-align: center;
 }
 
 .section-title {
+  align-self: start;
   justify-self: center;
-  font-size: 35px;
+  font-size: 2.15rem;
+  text-align: center;
 }
 
 #generate-button {
@@ -176,7 +180,7 @@ main {
 
 .section-text {
   text-align: center;
-  font-size: 30px;
+  font-size: 1.875rem;
   text-decoration: underline;
 }
 
@@ -193,5 +197,5 @@ footer {
   border-top: 2px solid black;
   justify-content: center;
   color: #696d7d;
-  font-size: 20px;
+  font-size: 1.24rem;
 }
