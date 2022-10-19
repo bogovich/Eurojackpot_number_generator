@@ -73,7 +73,7 @@ h6 {
 
 body {
   background: #ebf2fa;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Roboto Slab", serif;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50px 1fr 35px;
@@ -153,41 +153,40 @@ main {
 }
 
 .circle {
+  font-family: "Josefin Sans", sans-serif;
   color: white;
-  border: 2px solid white;
+  border: 2px solid black;
   background-color: white;
   border-radius: 50%;
-  width: 65px;
-  line-height: 65px;
+  width: 75px;
+  line-height: 75px;
   font-weight: 800;
-  font-size: 1.58rem;
+  font-size: 2rem;
   text-align: center;
 }
 
 .section-title {
   align-self: start;
   justify-self: center;
-  font-size: 2.15rem;
+  font-size: 3rem;
   text-align: center;
 }
 
-#generate-button {
+button {
   cursor: pointer;
-  border-radius: 25px;
-  width: 100px;
-  height: 100px;
+  border-radius: 25%;
+  width: 120px;
+  height: 120px;
+  font-weight: 800;
+  font-size: 1.2rem;
 }
 
 .section-text {
   text-align: center;
   font-size: 1.875rem;
   text-decoration: underline;
-}
-
-#save-button {
-  border-radius: 25px;
-  width: 100px;
-  height: 100px;
+  font-weight: 800;
+  margin-bottom: 1rem;
 }
 
 footer {
