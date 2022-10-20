@@ -130,7 +130,7 @@ main {
   flex: 5;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content repeat(4, 1fr);
+  grid-template-rows: min-content repeat(3, 1fr);
   align-items: center;
   gap: 10px;
 }
@@ -155,8 +155,10 @@ main {
   border-left: 2px solid black;
   display: grid;
   justify-items: center;
-  grid-template-columns: minmax(200px, 1fr);
-  grid-template-rows: minmax(250px, 1fr);
+  align-items: start;
+  grid-template-columns: minmax(250px, 1fr);
+  grid-template-rows: 80px 1fr 150px;
+  gap: 20px;
 }
 
 .circle {
@@ -170,6 +172,11 @@ main {
   font-weight: 800;
   font-size: 2em;
   text-align: center;
+}
+
+.euro-num {
+  background-color: #b36308;
+  color: #b36308;
 }
 
 .section-title {
@@ -204,4 +211,34 @@ footer {
   justify-content: center;
   color: #696d7d;
   font-size: 1.24em;
+}
+
+.flex-item {
+  display: flex;
+  justify-content: center;
+}
+
+.mini-circle {
+  width: 50px;
+  line-height: 50px;
+  font-size: 1.75em;
+}
+
+#saved-nums {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  gap: 10px;
+}
+
+.primary-color {
+  color: black;
+}
+
+.euro-color {
+  background-color: #b36308;
+  color: white;
 }
