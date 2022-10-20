@@ -112,8 +112,6 @@ const generateEuroJackpot = () => {
   return winningObj;
 };
 
-let currentNums = [];
-
 const populateNumDivs = (inputArr, classSelector) => {
   let targetDivs = [].slice.call(document.querySelectorAll(classSelector));
   targetDivs.forEach(function (div, idx) {
@@ -123,6 +121,8 @@ const populateNumDivs = (inputArr, classSelector) => {
     }
   });
 };
+
+let currentNums = [];
 
 const showGeneratedNumbers = () => {
   let winningNums = generateEuroJackpot();
