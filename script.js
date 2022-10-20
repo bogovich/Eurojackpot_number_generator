@@ -13,6 +13,12 @@ buttonGen = document.querySelector("#generate-button");
 let buttonSave;
 buttonSave = document.querySelector("#save-button");
 
+let buttonDel;
+buttonDel = document.querySelector("#delete-button");
+
+let savedList;
+savedList = document.querySelector("#saved-nums");
+
 const euroNumPairs = [
   [1, 6],
   [3, 4],
@@ -112,25 +118,62 @@ const generateEuroJackpot = () => {
   return winningObj;
 };
 
-const populateNumDivs = (inputArr, classSelector) => {
+const populateNumDivs = (inputArr, classSelector, textColor = 0) => {
   let targetDivs = [].slice.call(document.querySelectorAll(classSelector));
   targetDivs.forEach(function (div, idx) {
     if (inputArr.length >= idx) {
       div.textContent = inputArr[idx];
-      div.style.color = "#000000";
+      if (textColor) div.style.color = textColor;
     }
   });
 };
 
+let myNums = JSON.parse(localStorage.getItem("myNums")) || [];
 let currentNums = [];
 
 const showGeneratedNumbers = () => {
   let winningNums = generateEuroJackpot();
 
-  populateNumDivs(winningNums.primary, ".prim-num");
-  populateNumDivs(winningNums.euro, ".euro-num");
+  populateNumDivs(winningNums.primary, ".prim-num", "#000000");
+  populateNumDivs(winningNums.euro, ".euro-num", "#FFFFFF");
 
   currentNums = winningNums;
 };
 
+const render = (nums) => {
+  let numList = "";
+  for (let i = 0; i < nums.length; i++) {
+    numList += `<li class="flex-item">`;
+    for (let j = 0; j < nums[i].primary.length; j++) {
+      numList += `
+      <div class="circle mini-circle primary-color">
+      ${nums[i].primary[j]}
+      </div>`;
+    }
+    for (let k = 0; k < nums[i].euro.length; k++) {
+      numList += `
+      <div class="circle mini-circle euro-color">
+      ${nums[i].euro[k]}
+      </div>
+      `;
+    }
+    numList += `</li>`;
+  }
+  savedList.innerHTML = numList;
+};
+
 buttonGen.addEventListener("click", showGeneratedNumbers);
+
+buttonDel.addEventListener("click", function () {
+  localStorage.removeItem("myNums");
+  myNums = [];
+  render(myNums);
+});
+
+buttonSave.addEventListener("click", function () {
+  myNums.push(currentNums);
+  localStorage.setItem("myNums", JSON.stringify(myNums));
+  render(myNums);
+});
+
+render(myNums);
