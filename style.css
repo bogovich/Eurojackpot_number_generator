@@ -233,6 +233,8 @@ footer {
   margin: 0;
   text-align: center;
   gap: 10px;
+  align-content: center;
+  width: 50%;
 }
 
 .primary-color {
