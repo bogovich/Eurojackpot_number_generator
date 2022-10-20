@@ -10,6 +10,9 @@ let buttonGen;
 
 buttonGen = document.querySelector("#generate-button");
 
+let buttonSave;
+buttonSave = document.querySelector("#save-button");
+
 const euroNumPairs = [
   [1, 6],
   [3, 4],
@@ -109,27 +112,25 @@ const generateEuroJackpot = () => {
   return winningObj;
 };
 
-const showGeneratedNumbers = () => {
-  let winningNums = generateEuroJackpot();
+let currentNums = [];
 
-  var primaryEls = [].slice.call(document.querySelectorAll(".prim-num"));
-  primaryEls.forEach(function (div, idx) {
-    if (winningNums.primary.length >= idx) {
-      div.textContent = winningNums.primary[idx];
-      div.style.color = "#000000";
-    }
-  });
-
-  var euroEls = [].slice.call(document.querySelectorAll(".euro-num"));
-  euroEls.forEach(function (div, idx) {
-    if (winningNums.euro.length >= idx) {
-      div.textContent = winningNums.euro[idx];
+const populateNumDivs = (inputArr, classSelector) => {
+  let targetDivs = [].slice.call(document.querySelectorAll(classSelector));
+  targetDivs.forEach(function (div, idx) {
+    if (inputArr.length >= idx) {
+      div.textContent = inputArr[idx];
       div.style.color = "#000000";
     }
   });
 };
 
-buttonGen.addEventListener("click", showGeneratedNumbers);
+const showGeneratedNumbers = () => {
+  let winningNums = generateEuroJackpot();
 
-let winningNums = generateEuroJackpot();
-console.table(winningNums.euro[0]);
+  populateNumDivs(winningNums.primary, ".prim-num");
+  populateNumDivs(winningNums.euro, ".euro-num");
+
+  currentNums = winningNums;
+};
+
+buttonGen.addEventListener("click", showGeneratedNumbers);
