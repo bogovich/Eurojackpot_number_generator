@@ -155,6 +155,7 @@ main {
   border-left: 2px solid black;
   display: grid;
   justify-items: center;
+  align-content: center;
   align-items: start;
   grid-template-columns: minmax(250px, 1fr);
   grid-template-rows: 80px 1fr 150px;
@@ -193,6 +194,8 @@ button {
   height: 120px;
   font-weight: 800;
   font-size: 1.2em;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
 .section-text {
@@ -227,14 +230,15 @@ footer {
 
 #saved-nums {
   display: flex;
+  flex: 100%;
   flex-flow: row wrap;
   list-style-type: none;
   padding: 0;
   margin: 0;
   text-align: center;
-  gap: 10px;
+  gap: 20px;
   align-content: center;
-  width: 50%;
+  justify-content: center;
 }
 
 .primary-color {
