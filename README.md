@@ -2,10 +2,12 @@
 
 https://bogovich.github.io/Eurojackpot_number_generator/
 
-## Description
+## Project description
 
 Simple, mobile-friendly, responsive number generator for EuroJackpot. Built with pure JS, CSS and HTML. 
 Applied DOM manipulation, array and object methods, events, localStorage persistence, flex and grid layouts.
+
+### Algorithm
 
 Script generates 5 standard numbers + 2 euro numbers.
 The five standard numbers should have a sum between LOW_SUM_LIMIT and HIGH_SUM_LIMIT with the exception of sums in avoidSum.
